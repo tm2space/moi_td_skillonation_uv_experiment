@@ -19,7 +19,7 @@ def main():
     while True:
         uva, uvb, uvc, temp = uv_sensor.values
         print(f'uva: {uva:.{PRINT_RESOLUTION}f}, uvb: {uvb:.{PRINT_RESOLUTION}f}, uvc: {uvc:.{PRINT_RESOLUTION}f}, {temp: 1.2f}')
-        time.sleep(0.1)
+        time.sleep(2)
 
 if __name__ == "__main__":
     main()
