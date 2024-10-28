@@ -14,11 +14,14 @@ def main():
     # Configure the uv_sensor
     uv_sensor.gain = sensor_lib.GAIN_512X
     uv_sensor.integration_time = sensor_lib.INTEGRATION_TIME_128MS
+    
+    #delay time for sensor to initialise
+    time.sleep(1.5)
 
     # Main loop to read values
     while True:
         uva, uvb, uvc, temp = uv_sensor.values
-        print(f'uva: {uva:.{PRINT_RESOLUTION}f}, uvb: {uvb:.{PRINT_RESOLUTION}f}, uvc: {uvc:.{PRINT_RESOLUTION}f}, {temp: 1.2f}')
+        print(f'uva: {uva:.{PRINT_RESOLUTION}f}, uvb: {uvb:.{PRINT_RESOLUTION}f}, uvc: {uvc:.{PRINT_RESOLUTION}f}, temp: {temp: 1.2f}')
         time.sleep(2)
 
 if __name__ == "__main__":
